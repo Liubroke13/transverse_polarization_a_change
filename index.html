@@ -16,7 +16,6 @@
       align-items: center;
     }
 
-    /* Rotation Notice Banner for Mobile Portrait Mode */
     .rotate-notice {
       display: none;
       background-color: #fff3cd;
@@ -33,9 +32,7 @@
     }
 
     @media screen and (max-width: 768px) and (orientation: portrait) {
-      .rotate-notice {
-        display: block;
-      }
+      .rotate-notice { display: block; }
     }
 
     .slide-container {
@@ -61,17 +58,15 @@
       font-style: italic;
     }
 
-    /* 主網格容器 */
     .animation-grid {
       display: flex;
       flex-direction: column;
-      gap: 0px; /* 消除大層級縫隙 */
+      gap: 0px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       background-color: #ffffff;
       width: 100%;
     }
 
-    /* 上方標頭行 */
     .header-row {
       display: grid;
       grid-template-columns: 115px repeat(4, 1fr);
@@ -88,7 +83,6 @@
       white-space: nowrap;
     }
 
-    /* 左上角標頭 */
     .top-left-header {
       background-color: #a6a6a6;
       font-size: 1.05rem;
@@ -97,27 +91,19 @@
       color: #000000;
     }
 
-    /* 上方橘色標頭 */
     .orange-cell {
       background-color: #fca385;
       color: #000000;
       font-weight: normal;
     }
 
-    /* 
-      =======================================================
-      背景長方形層：對稱上下延伸，使分界恰好落在兩排影片正中間
-      =======================================================
-    */
     .row-block {
       width: 100%;
-      /* 對稱上下 padding，確保影片居中，背景分界落於上下影片間的正中央 */
       padding: 12px 0;
       box-sizing: border-box;
       margin: 0;
     }
 
-    /* 內層影片網格：獨立維持 4px 欄位間距 */
     .row-inner-grid {
       display: grid;
       grid-template-columns: 115px repeat(4, 1fr);
@@ -126,7 +112,6 @@
       width: 100%;
     }
 
-    /* 行1：白色長方形框 */
     .row-alpha-0 {
       background-color: #ffffff;
       border-top: 1px solid #d0d0d0;
@@ -134,25 +119,21 @@
       color: #000000;
     }
 
-    /* 行2：灰色漸層長方形框 */
     .row-alpha-half {
       background: linear-gradient(to right, #808080, #9a9a9a);
       color: #000000;
     }
 
-    /* 行3：黑色漸層長方形框 */
     .row-alpha-pi {
       background: linear-gradient(to right, #000000, #1c1c1c);
       color: #ffffff;
     }
 
-    /* 左側 alpha 標籤欄 */
     .alpha-label {
       font-size: 1.3rem;
       text-align: center;
     }
 
-    /* 影片儲存格：強制 1:1 正方形且解耦計算 */
     .video-cell {
       position: relative;
       width: 100%;
@@ -166,14 +147,14 @@
       align-items: center;
     }
 
-    /* 影片本體渲染保護 */
+    /* 關鍵：套用 SVG 濾鏡保護極細白線 */
     video {
       width: 100%;
       height: 100%;
       display: block;
       pointer-events: none;
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
+      filter: url(#line-preserve-filter) contrast(120%);
+      transform: translateZ(0); /* 強制獨立 GPU 圖層 */
     }
 
     video::-webkit-media-controls { display: none !important; }
@@ -182,7 +163,6 @@
       -webkit-appearance: none !important;
     }
 
-    /* 右下角數字 overlay */
     .l-overlay {
       position: absolute;
       bottom: 4px;
@@ -199,6 +179,15 @@
   </style>
 </head>
 <body>
+
+<!-- 隱形 SVG 濾鏡：強行維持亮色細線的最小像素寬度 -->
+<svg style="display:none; position: absolute; width: 0; height: 0;">
+  <filter id="line-preserve-filter">
+    <!-- 對白色高亮區域進行微幅膨脹（Dilation），防止被平滑化抹除 -->
+    <feMorphology operator="dilate" radius="0.65" in="SourceGraphic" result="thickened"/>
+    <feBlend mode="screen" in="SourceGraphic" in2="thickened"/>
+  </filter>
+</svg>
 
 <div class="rotate-notice">
     <strong>Please rotate your phone for optimal display.</strong> 
