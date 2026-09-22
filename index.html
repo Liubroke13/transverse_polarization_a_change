@@ -103,7 +103,7 @@
       font-weight: normal;
     }
 
-    /* 每一行獨立長方形容器（上下加 Padding，讓長方形延伸超出影片） */
+    /* 每一行獨立長方形容器 */
     .row-block {
       display: grid;
       grid-template-columns: 115px repeat(4, 1fr);
@@ -149,15 +149,20 @@
       border: 1px solid rgba(255, 255, 255, 0.6);
       box-sizing: border-box;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
+    /* 修正影片渲染設定：保持原清晰度不模糊 */
     video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       display: block;
       pointer-events: none;
-      -webkit-transform: translateZ(0);
+      /* 強化細線與高對比線條渲染 */
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
 
     video::-webkit-media-controls {
