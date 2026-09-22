@@ -70,7 +70,7 @@
       background-color: #ffffff;
     }
 
-    /* 上方標頭行 (還原原始樣式) */
+    /* 上方標頭行 */
     .header-row {
       display: grid;
       grid-template-columns: 115px repeat(4, 1fr);
@@ -103,13 +103,13 @@
       font-weight: normal;
     }
 
-    /* 每一行作為獨立長方形容器（無空隙銜接，但內部上下 Padding 讓長方形比影片高） */
+    /* 每一行獨立長方形容器（上下加 Padding，讓長方形延伸超出影片） */
     .row-block {
       display: grid;
       grid-template-columns: 115px repeat(4, 1fr);
       gap: 4px;
       align-items: center;
-      padding: 12px 6px; /* 上下加 Padding，使長方形延伸超出影片 */
+      padding: 12px 6px;
       box-sizing: border-box;
     }
 
@@ -140,7 +140,7 @@
       padding: 5px;
     }
 
-    /* 影片儲存格：包在長方形框內 */
+    /* 影片儲存格 */
     .video-cell {
       position: relative;
       width: 100%;
@@ -197,7 +197,7 @@
   <div class="slide-subtitle">(figures are plotted <strong>without</strong> the approximation)</div>
 
   <div class="animation-grid">
-    <!-- Header Row (與原樣式一致) -->
+    <!-- Header Row -->
     <div class="header-row">
       <div class="grid-cell top-left-header">
         <div><span class="math">&ell;</span> = &minus;1</div>
@@ -209,76 +209,76 @@
       <div class="grid-cell orange-cell"><span class="math">&ell;'</span> = 2</div>
     </div>
 
-    <!-- Row 1: alpha = 0 (白色長方形，上下凸出框住 alpha 與影片，無縫接續下一列) -->
+    <!-- Row 1: alpha = 0 -->
     <div class="row-block row-alpha-0">
       <div class="grid-cell alpha-label">
         <span class="math">&alpha;</span> = 0
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_-1_alpha_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_-1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         <div class="l-overlay">&Delta;<span class="math">&ell;</span> = 0</div>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_0_alpha_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         <div class="l-overlay">1</div>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_1_alpha_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         <div class="l-overlay">2</div>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_2_alpha_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_2.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         <div class="l-overlay">3</div>
       </div>
     </div>
 
-    <!-- Row 2: alpha = pi/2 (灰色長方形) -->
+    <!-- Row 2: alpha = pi/2 -->
     <div class="row-block row-alpha-half">
       <div class="grid-cell alpha-label">
         <span class="math">&alpha;</span> = <span class="math">&pi;</span>/2
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_-1_alpha_1.57.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_-1_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_0_alpha_1.57.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_0_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_1_alpha_1.57.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_1_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_2_alpha_1.57.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_2_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
       </div>
     </div>
 
-    <!-- Row 3: alpha = pi (黑色長方形) -->
+    <!-- Row 3: alpha = pi -->
     <div class="row-block row-alpha-pi">
       <div class="grid-cell alpha-label">
         <span class="math">&alpha;</span> = <span class="math">&pi;</span>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_-1_alpha_3.14.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_-1_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_0_alpha_3.14.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_0_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_1_alpha_3.14.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_1_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
       </div>
 
       <div class="video-cell">
-        <video src="l_-1_lp_2_alpha_3.14.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+        <video src="l_-1_lp_2_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
       </div>
     </div>
 
