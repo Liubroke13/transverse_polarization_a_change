@@ -98,15 +98,9 @@
       font-weight: normal;
     }
 
-    /* 
-      =======================================================
-      【修正重點】：將 padding 從 14px 縮減為 4px
-      減少長方形背景在影片上下邊界凸出的高度，縮減總體頁面尺寸
-      =======================================================
-    */
     .row-block {
       width: 100%;
-      padding: 4px 0; /* 上下緊湊延伸 4px，兼顧微小留白與分界中立 */
+      padding: 4px 0;
       box-sizing: border-box;
       margin: 0;
     }
@@ -177,7 +171,7 @@
       right: 12px;
       color: #ffffff;
       font-family: 'Times New Roman', Times, serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       pointer-events: none;
       text-shadow: 1px 1px 3px #000000, -1px -1px 3px #000000;
       z-index: 10;
@@ -218,24 +212,22 @@
           <span class="math">&alpha;</span> = 0
         </div>
 
+        <!-- 子圖右下角標註 alpha/2 = 0 -->
         <div class="video-cell">
           <video src="l_-1_lp_-1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-          <div class="l-overlay">&Delta;<span class="math">&ell;</span> = 0</div>
+          <div class="l-overlay"><span class="math">&alpha;</span>/2 = 0</div>
         </div>
 
         <div class="video-cell">
           <video src="l_-1_lp_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-          <div class="l-overlay">1</div>
         </div>
 
         <div class="video-cell">
           <video src="l_-1_lp_1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-          <div class="l-overlay">2</div>
         </div>
 
         <div class="video-cell">
           <video src="l_-1_lp_2.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
-          <div class="l-overlay">3</div>
         </div>
       </div>
     </div>
@@ -247,8 +239,10 @@
           <span class="math">&alpha;</span> = <span class="math">&pi;</span>/2
         </div>
 
+        <!-- 子圖右下角標註 pi/4 -->
         <div class="video-cell">
           <video src="l_-1_lp_-1_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <div class="l-overlay"><span class="math">&pi;</span>/4</div>
         </div>
 
         <div class="video-cell">
@@ -272,8 +266,10 @@
           <span class="math">&alpha;</span> = <span class="math">&pi;</span>
         </div>
 
+        <!-- 子圖右下角標註 pi/2 -->
         <div class="video-cell">
           <video src="l_-1_lp_-1_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <div class="l-overlay"><span class="math">&pi;</span>/2</div>
         </div>
 
         <div class="video-cell">
