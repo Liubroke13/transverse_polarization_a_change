@@ -58,6 +58,88 @@
       font-style: italic;
     }
 
+    /* Control Bar Styles */
+    .controls-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background-color: #f2f2f2;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 8px 16px;
+      margin-top: 16px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .play-btn {
+      background-color: #0056b3;
+      color: #ffffff;
+      border: none;
+      padding: 6px 16px;
+      font-size: 1rem;
+      font-family: inherit;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 110px;
+      transition: background-color 0.2s, opacity 0.2s;
+    }
+
+    .play-btn:hover:not(:disabled) {
+      filter: brightness(0.9);
+    }
+
+    .play-btn:disabled {
+      background-color: #6c757d;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+
+    .seek-slider {
+      flex-grow: 1;
+      height: 6px;
+      cursor: pointer;
+      accent-color: #0056b3;
+    }
+
+    .seek-slider:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    .time-display {
+      font-size: 1rem;
+      font-family: 'Times New Roman', Times, serif;
+      color: #333;
+      min-width: 130px;
+      text-align: right;
+    }
+
+    .loading-notice {
+      margin-top: 8px;
+      padding: 6px 12px;
+      font-size: 0.95rem;
+      font-family: sans-serif;
+      color: #856404;
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      text-align: center;
+      transition: opacity 0.5s ease;
+      width: 100%;
+      box-sizing: border-box;
+      display: none;
+    }
+
+    .loading-notice.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     .animation-grid {
       display: flex;
       flex-direction: column;
@@ -70,7 +152,7 @@
     /* 標頭行 */
     .header-row {
       display: grid;
-      grid-template-columns: 130px repeat(4, 1fr);
+      grid-template-columns: 140px repeat(4, 1fr);
       gap: 4px;
       height: 55px;
       background-color: #ffffff;
@@ -107,7 +189,7 @@
 
     .row-inner-grid {
       display: grid;
-      grid-template-columns: 130px repeat(4, 1fr);
+      grid-template-columns: 140px repeat(4, 1fr);
       column-gap: 4px;
       align-items: center;
       width: 100%;
@@ -157,6 +239,9 @@
       height: 100%;
       display: block;
       pointer-events: none;
+      -webkit-transform: translateZ(0);
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
 
     video::-webkit-media-controls { display: none !important; }
@@ -212,22 +297,21 @@
           <span class="math">&alpha;</span> = 0
         </div>
 
-        <!-- 子圖右下角標註 alpha/2 = 0 -->
         <div class="video-cell">
-          <video src="l_-1_lp_-1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_-1.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
           <div class="l-overlay"><span class="math">&alpha;</span>/2 = 0</div>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_0.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_0.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_1.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_1.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_2.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_2.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
       </div>
     </div>
@@ -239,22 +323,21 @@
           <span class="math">&alpha;</span> = <span class="math">&pi;</span>/2
         </div>
 
-        <!-- 子圖右下角標註 pi/4 -->
         <div class="video-cell">
-          <video src="l_-1_lp_-1_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_-1_alpha_0.50pi.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
           <div class="l-overlay"><span class="math">&pi;</span>/4</div>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_0_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_0_alpha_0.50pi.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_1_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_1_alpha_0.50pi.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_2_alpha_0.50pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_2_alpha_0.50pi.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
       </div>
     </div>
@@ -266,32 +349,54 @@
           <span class="math">&alpha;</span> = <span class="math">&pi;</span>
         </div>
 
-        <!-- 子圖右下角標註 pi/2 -->
         <div class="video-cell">
-          <video src="l_-1_lp_-1_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_-1_alpha_1.00pi.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
           <div class="l-overlay"><span class="math">&pi;</span>/2</div>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_0_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_0_alpha_1.00pi.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_1_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_1_alpha_1.00pi.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
 
         <div class="video-cell">
-          <video src="l_-1_lp_2_alpha_1.00pi.mp4" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
+          <video src="l_-1_lp_2_alpha_1.00pi.mp4#t=0.001" muted loop playsinline webkit-playsinline preload="auto" disablePictureInPicture controlsList="nodownload no-fullscreen noremoteplayback"></video>
         </div>
       </div>
     </div>
 
   </div>
+
+  <!-- Synchronized Playback Control Bar -->
+  <div class="controls-wrapper">
+    <button id="playBtn" class="play-btn">Load Videos</button>
+    <input type="range" id="seekSlider" class="seek-slider" min="0" max="6.2831853" value="0" step="0.314159" disabled>
+    <div id="timeDisplay" class="time-display"><span class="math">&omega;t</span> = 0.0&pi;</div>
+  </div>
+
+  <!-- Loading Status Notice Below Control Bar -->
+  <div id="loadingNotice" class="loading-notice">
+    ⏳ Fully buffering video data into device memory... (<span id="loadedCount">0</span>/12)
+  </div>
 </div>
 
 <script>
-  async function syncAndPlayAllVideos() {
+  document.addEventListener('DOMContentLoaded', () => {
     const videos = Array.from(document.querySelectorAll('video'));
+    const playBtn = document.getElementById('playBtn');
+    const seekSlider = document.getElementById('seekSlider');
+    const timeDisplay = document.getElementById('timeDisplay');
+    const loadingNotice = document.getElementById('loadingNotice');
+    const loadedCountSpan = document.getElementById('loadedCount');
+    
+    let isSeeking = false;
+    let masterVideo = videos[0];
+    const TWO_PI = Math.PI * 2;
+    let isFullyLoaded = false;
+    const loadedSet = new Set();
 
     videos.forEach(v => {
       v.muted = true;
@@ -299,42 +404,151 @@
       v.pause();
     });
 
-    const loadPromises = videos.map(v => {
+    function timeToWt(currentTime, duration) {
+      if (!duration) return 0;
+      const progress = (currentTime % duration) / duration;
+      return progress * TWO_PI;
+    }
+
+    function wtToTime(wt, duration) {
+      if (!duration) return 0;
+      return (wt / TWO_PI) * duration;
+    }
+
+    function updateWtDisplay(wt) {
+      const piFraction = (wt / Math.PI).toFixed(1);
+      timeDisplay.innerHTML = `<span class="math">&omega;t</span> = ${piFraction}&pi;`;
+    }
+
+    masterVideo.addEventListener('timeupdate', () => {
+      if (!isSeeking && masterVideo.duration && isFullyLoaded) {
+        const wt = timeToWt(masterVideo.currentTime, masterVideo.duration);
+        seekSlider.value = wt;
+        updateWtDisplay(wt);
+      }
+    });
+
+    function markVideoLoaded(index) {
+      if (!loadedSet.has(index)) {
+        loadedSet.add(index);
+        loadedCountSpan.textContent = loadedSet.size;
+
+        if (loadedSet.size >= videos.length) {
+          onAllVideosReady();
+        }
+      }
+    }
+
+    function onAllVideosReady() {
+      if (isFullyLoaded) return;
+      isFullyLoaded = true;
+      
+      videos.forEach(v => {
+        v.pause();
+        v.playbackRate = 1.0;
+        v.currentTime = 0.001;
+      });
+
+      playBtn.textContent = 'Play';
+      playBtn.style.backgroundColor = '#28a745';
+      playBtn.disabled = false;
+      seekSlider.disabled = false;
+
+      loadingNotice.style.opacity = '0';
+      setTimeout(() => {
+        loadingNotice.classList.add('hidden');
+      }, 500);
+    }
+
+    function warmUpVideo(v, idx) {
       return new Promise((resolve) => {
-        if (v.readyState >= 2) {
-          resolve();
-        } else {
-          v.addEventListener('canplay', () => resolve(), { once: true });
-          v.load();
+        let isDone = false;
+
+        const checkBufferAndComplete = () => {
+          if (isDone) return;
+
+          const isTimeNearEnd = v.duration && (v.currentTime >= v.duration - 0.2);
+
+          let isBufferedFull = false;
+          if (v.buffered && v.buffered.length > 0 && v.duration) {
+            const bufferedEnd = v.buffered.end(v.buffered.length - 1);
+            if (bufferedEnd >= v.duration - 0.1) {
+              isBufferedFull = true;
+            }
+          }
+
+          if (isTimeNearEnd || isBufferedFull) {
+            isDone = true;
+            v.removeEventListener('timeupdate', checkBufferAndComplete);
+            v.pause();
+            markVideoLoaded(idx);
+            resolve();
+          }
+        };
+
+        v.addEventListener('timeupdate', checkBufferAndComplete);
+        v.playbackRate = 4.0;
+        
+        const promise = v.play();
+        if (promise !== undefined) {
+          promise.catch(() => {
+            v.play();
+          });
         }
       });
+    }
+
+    playBtn.addEventListener('click', async () => {
+      if (!isFullyLoaded) {
+        playBtn.disabled = true;
+        playBtn.textContent = 'Buffering...';
+        playBtn.style.backgroundColor = '#6c757d';
+        loadingNotice.style.display = 'block';
+
+        const warmUpTasks = videos.map((v, idx) => warmUpVideo(v, idx));
+        await Promise.all(warmUpTasks);
+        onAllVideosReady();
+        return;
+      }
+
+      if (masterVideo.paused) {
+        try {
+          const targetTime = parseFloat(seekSlider.value) === 0 ? 0.001 : wtToTime(parseFloat(seekSlider.value), masterVideo.duration);
+          
+          videos.forEach(v => {
+            v.currentTime = targetTime;
+          });
+
+          const playPromises = videos.map(v => v.play());
+          await Promise.all(playPromises);
+
+          playBtn.textContent = 'Pause';
+          playBtn.style.backgroundColor = '#dc3545';
+        } catch (err) {
+          console.error("Playback start error: ", err);
+        }
+      } else {
+        videos.forEach(v => v.pause());
+        playBtn.textContent = 'Play';
+        playBtn.style.backgroundColor = '#28a745';
+      }
     });
 
-    await Promise.all(loadPromises);
-
-    videos.forEach(v => {
-      v.currentTime = 0;
+    seekSlider.addEventListener('input', () => {
+      if (!isFullyLoaded) return;
+      isSeeking = true;
+      const wt = parseFloat(seekSlider.value);
+      const seekTime = wtToTime(wt, masterVideo.duration);
+      videos.forEach(v => {
+        v.currentTime = seekTime;
+      });
+      updateWtDisplay(wt);
     });
 
-    const playPromises = videos.map(v => v.play());
-    
-    Promise.all(playPromises).catch(() => {
-      const forcePlayOnInteraction = () => {
-        videos.forEach(v => {
-          v.currentTime = 0;
-          v.play();
-        });
-      };
-      document.addEventListener('touchstart', forcePlayOnInteraction, { once: true });
-      document.addEventListener('click', forcePlayOnInteraction, { once: true });
+    seekSlider.addEventListener('change', () => {
+      isSeeking = false;
     });
-  }
-
-  if (document.readyState === 'complete') {
-    syncAndPlayAllVideos();
-  } else {
-    window.addEventListener('load', syncAndPlayAllVideos);
-  }
+  });
 </script>
 
 </body>
